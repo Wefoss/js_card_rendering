@@ -1,0 +1,96 @@
+:root {
+  font-size: 16px;
+}
+
+body {
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 50px auto;
+}
+
+.list {
+  display: grid;
+  place-items: center, stretch;
+  gap: 40px;
+  text-align: center;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.list-item {
+  padding: 2rem 2rem 2rem 2rem;
+  border-radius: 1rem;
+  box-shadow: 4px 5px 5px 2px rgba(0, 0, 0, 0.3);
+}
+
+.list-item_image {
+  width: 130px;
+  height: 130px;
+  padding: 3px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50%;
+  border: 3px solid lightcoral;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: auto;
+}
+
+.list-item_name {
+  padding: 1rem 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.soсials {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.soсial {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  background-color: lightcoral;
+  border-radius: 50%;
+}
+.soсial i {
+  color: #fff;
+}
+
+
+.cart-list {
+  max-width: 50ch;
+ 
+  margin: 20px auto;
+  border: 2px solid lightblue;
+  border-radius: 5px;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  }
+
+.cart-list>li {
+text-align: center;
+ font-size: 1.2rem;
+}
