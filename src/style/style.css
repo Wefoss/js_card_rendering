@@ -23,20 +23,28 @@ ul {
 .container {
   max-width: 1200px;
   margin: 50px auto;
+  padding: 10px;
 }
 
 .list {
-  display: grid;
-  place-items: center, stretch;
   gap: 40px;
+  display: flex;
+  flex-flow: row wrap;
   text-align: center;
-  grid-template-columns: repeat(4, 1fr);
+  justify-content: space-around;
 }
 
 .list-item {
   padding: 2rem 2rem 2rem 2rem;
   border-radius: 1rem;
   box-shadow: 4px 5px 5px 2px rgba(0, 0, 0, 0.3);
+  flex: 1 1 15%;
+  transition: all 0.3s ease;
+}
+
+.list-item:hover {
+  transform: translate(3px, 3px);
+  box-shadow: 4px 5px 5px 2px rgba(0, 0, 0, 0.2);
 }
 
 .list-item_image {
@@ -58,6 +66,7 @@ ul {
   padding: 1rem 0;
   font-size: 1.2rem;
   font-weight: 600;
+  
 }
 
 .soсials {
@@ -73,7 +82,13 @@ ul {
   height: 2rem;
   background-color: lightcoral;
   border-radius: 50%;
+  transition: transform 0.2s ease;
 }
+
+.soсial:hover {
+  transform: scale(1.1);
+}
+
 .soсial i {
   color: #fff;
 }
@@ -81,16 +96,16 @@ ul {
 
 .cart-list {
   max-width: 50ch;
- 
   margin: 20px auto;
   border: 2px solid lightblue;
   border-radius: 5px;
-  display: flex;
-  flex-flow: column wrap;
-  justify-content: center;
-  }
-
-.cart-list>li {
-text-align: center;
- font-size: 1.2rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
 }
+
+.cart-list > li {
+  padding: 5px;
+  font-size: 1.2rem;
+  border: 1px solid lightgreen;
+}
+
