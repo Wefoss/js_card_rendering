@@ -6,7 +6,17 @@
 body {
   box-sizing: border-box;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(transparent 50%, lightcoral 50%);
+  z-index: 1;
+}
+
+.bg {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background-color: lightcoral;
+  z-index: -1;
 }
 
 a {
@@ -26,14 +36,13 @@ ul {
   max-width: 1200px;
   margin: 50px auto;
   padding: 10px;
-  }
+}
 
 .title {
   margin: 30px;
   font-size: 2rem;
   text-align: center;
   color: lightcoral;
-  
 }
 
 .list {
@@ -42,6 +51,7 @@ ul {
   flex-flow: row wrap;
   text-align: center;
   justify-content: space-around;
+  position: relative;
 }
 
 .list-item {

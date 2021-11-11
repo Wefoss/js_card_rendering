@@ -128,9 +128,8 @@ function listInitialsHandler(e) {
       !celebrityNames.includes(el.textContent)
     ) {
       celebrityNames.push(el.textContent);
-      const li = document.createElement("li");
-      li.textContent = el.textContent;
-      e.target.closest(".list-item").parentNode.nextElementSibling.append(li);
+          let li = createOne('li', {}, document.createTextNode(`${el.textContent}`))
+           e.target.closest(".list-item").parentNode.nextElementSibling.append(li);
     }
   }
 }
