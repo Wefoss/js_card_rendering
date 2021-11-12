@@ -11,7 +11,9 @@ function fetchInit() {
     .then((data) => data.json())
     .then((data) => {
       return data.forEach((el) => createItem(el));
-    });
+    }).catch(() => {
+      document.querySelector('.second-title').textContent = 'Selebretis not found'
+      throw new Error('"Selebretis not found, please try again later"')})
   return res;
 }
 
