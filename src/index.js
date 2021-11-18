@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   fetchInit();
-  console.log("Load done");
+  
 });
 
 const parent = document.querySelector(".list");
@@ -11,9 +11,12 @@ function fetchInit() {
     .then((data) => data.json())
     .then((data) => {
       return data.forEach((el) => createItem(el));
-    }).catch(() => {
-      document.querySelector('.second-title').textContent = 'Selebretis not found'
-      throw new Error('"Selebretis not found, please try again later"')})
+    })
+    .catch(() => {
+      document.querySelector(".second-title").textContent =
+        "Selebretis not found";
+      throw new Error('"Selebretis not found, please try again later"');
+    });
   return res;
 }
 
@@ -44,15 +47,19 @@ function createItem(el) {
   parent.append(listItem);
 }
 
+const temp = new Map();
 function soсialsUrlIcons(el) {
   el.contacts.forEach((elem) => {
-    let temp = new Map();
     temp.set(new URL(elem).hostname);
     if (temp.has("www.facebook.com")) {
       temp.set("www.facebook.com", "fa-facebook-f");
-    } else if (temp.has("twitter.com")) {
+    }
+    if (temp.has("twitter.com")) {
       temp.set("twitter.com", "fa-twitter");
-    } else temp.set("www.instagram.com", "fa-instagram");
+    }
+    if (temp.has("www.instagram.com")) {
+      temp.set("www.instagram.com", "fa-instagram");
+    }
 
     icon = createOne("i", {
       className: [temp.get(new URL(elem).hostname), "fab"],
@@ -130,8 +137,12 @@ function listInitialsHandler(e) {
       !celebrityNames.includes(el.textContent)
     ) {
       celebrityNames.push(el.textContent);
-          let li = createOne('li', {}, document.createTextNode(`${el.textContent}`))
-           e.target.closest(".list-item").parentNode.nextElementSibling.append(li);
+      let li = createOne(
+        "li",
+        {},
+        document.createTextNode(`${el.textContent}`)
+      );
+      e.target.closest(".list-item").parentNode.nextElementSibling.append(li);
     }
   }
 }
